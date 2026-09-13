@@ -280,7 +280,7 @@ ballStatsTitle.Name = RandName()
 ballStatsTitle.Size = UDim2.new(1, -35, 1, 0)
 ballStatsTitle.Position = UDim2.new(0, 26, 0, 0)
 ballStatsTitle.BackgroundTransparency = 1
-ballStatsTitle.Text = S("BALL TELEMETRY")
+ballStatsTitle.Text = S("THÔNG SỐ BÓNG")
 ballStatsTitle.TextColor3 = Color3.fromRGB(235, 215, 255)
 ballStatsTitle.TextSize = 10
 ballStatsTitle.Font = Enum.Font.GothamBold
@@ -293,7 +293,7 @@ currentSpeedLabel.Name = RandName()
 currentSpeedLabel.Size = UDim2.new(0, 110, 0, 18)
 currentSpeedLabel.Position = UDim2.new(0, 12, 0, 34)
 currentSpeedLabel.BackgroundTransparency = 1
-currentSpeedLabel.Text = S("CURRENT VELOCITY")
+currentSpeedLabel.Text = S("TỐC ĐỘ HIỆN TẠI")
 currentSpeedLabel.TextColor3 = Color3.fromRGB(150, 135, 180)
 currentSpeedLabel.TextSize = 9
 currentSpeedLabel.Font = Enum.Font.GothamBold
@@ -317,7 +317,7 @@ peakSpeedLabel.Name = RandName()
 peakSpeedLabel.Size = UDim2.new(0, 110, 0, 18)
 peakSpeedLabel.Position = UDim2.new(0, 12, 0, 58)
 peakSpeedLabel.BackgroundTransparency = 1
-peakSpeedLabel.Text = S("PEAK RECORDED")
+peakSpeedLabel.Text = S("TỐC ĐỘ CAO NHẤT")
 peakSpeedLabel.TextColor3 = Color3.fromRGB(150, 135, 180)
 peakSpeedLabel.TextSize = 9
 peakSpeedLabel.Font = Enum.Font.GothamBold
@@ -388,7 +388,7 @@ clientStatsTitle.Name = RandName()
 clientStatsTitle.Size = UDim2.new(1, -35, 1, 0)
 clientStatsTitle.Position = UDim2.new(0, 26, 0, 0)
 clientStatsTitle.BackgroundTransparency = 1
-clientStatsTitle.Text = S("SYSTEM METRICS")
+clientStatsTitle.Text = S("THÔNG SỐ HỆ THỐNG")
 clientStatsTitle.TextColor3 = Color3.fromRGB(235, 215, 255)
 clientStatsTitle.TextSize = 10
 clientStatsTitle.Font = Enum.Font.GothamBold
@@ -420,7 +420,7 @@ pingLabel.Name = RandName()
 pingLabel.Size = UDim2.new(0.33, 0, 1, 0)
 pingLabel.Position = UDim2.new(0.33, 0, 0, 0)
 pingLabel.BackgroundTransparency = 1
-pingLabel.Text = S("32ms PING")
+pingLabel.Text = S("32ms ĐỘ TRỄ")
 pingLabel.TextColor3 = Color3.fromRGB(216, 160, 255)
 pingLabel.TextSize = 11
 pingLabel.Font = Enum.Font.GothamBold
@@ -432,7 +432,7 @@ cpuLabel.Name = RandName()
 cpuLabel.Size = UDim2.new(0.33, 0, 1, 0)
 cpuLabel.Position = UDim2.new(0.66, 0, 0, 0)
 cpuLabel.BackgroundTransparency = 1
-cpuLabel.Text = S("6% LOAD")
+cpuLabel.Text = S("6% TẢI HỆ THỐNG")
 cpuLabel.TextColor3 = Color3.fromRGB(52, 211, 153)
 cpuLabel.TextSize = 11
 cpuLabel.Font = Enum.Font.GothamBold
@@ -473,8 +473,8 @@ table.insert(activeConnections, RunService.RenderStepped:Connect(function(dt)
     end
     if Config.ClientStatsHUD and clientStatsFrame.Visible then
         fpsLabel.Text = S(tostring(currentFps) .. " FPS")
-        pingLabel.Text = S(tostring(math.floor(lastTelemetry.ping or 32)) .. "ms PING")
-        cpuLabel.Text = S(tostring(scriptCpuLoad) .. "% LOAD")
+        pingLabel.Text = S(tostring(math.floor(lastTelemetry.ping or 32)) .. "ms ĐỘ TRỄ")
+        cpuLabel.Text = S(tostring(scriptCpuLoad) .. "% TẢI HỆ THỐNG")
     end
 end))
 local CONFIG_DIR = "Identical"
@@ -634,7 +634,7 @@ local function OnPlayerDied()
     local timeSinceParry = now - (lastTelemetry.parryTime or 0)
     local isConfirmedClash = lastTelemetry.isClashing and (lastTelemetry.nearestEnemyDist <= (Config.ClashDistance + 8))
     if not Config.AutoParry then
-        reason = "Auto Parry was DISABLED."
+        reason = "Tự động đỡ was ĐÃ TẮT."
     elseif lastTelemetry.time == 0 then
         reason = "Eliminated (Outside active ball threat range)."
     elseif lastTelemetry.abilityActive then
@@ -1080,7 +1080,7 @@ searchBox.Name = RandName()
 searchBox.Size = UDim2.new(1, -16, 1, 0)
 searchBox.Position = UDim2.new(0, 8, 0, 0)
 searchBox.BackgroundTransparency = 1
-searchBox.PlaceholderText = S("Search...")
+searchBox.PlaceholderText = S("Tìm kiếm...")
 searchBox.PlaceholderColor3 = Colors.TextMuted
 searchBox.Text = ""
 searchBox.TextColor3 = Colors.TextMain
@@ -1118,7 +1118,7 @@ footerLeft.Name = RandName()
 footerLeft.Size = UDim2.new(0, 220, 1, 0)
 footerLeft.Position = UDim2.new(0, 14, 0, 0)
 footerLeft.BackgroundTransparency = 1
-footerLeft.Text = S("Identical engine ready")
+footerLeft.Text = S("Hệ thống đã sẵn sàng")
 footerLeft.TextColor3 = Colors.TextDark
 footerLeft.TextSize = 10
 footerLeft.Font = Enum.Font.GothamMedium
@@ -1130,7 +1130,7 @@ footerCenter.Size = UDim2.new(0, 140, 1, 0)
 footerCenter.Position = UDim2.new(0.5, -70, 0, 0)
 footerCenter.BackgroundTransparency = 1
 footerCenter.RichText = true
-footerCenter.Text = S("Identical Edition")
+footerCenter.Text = S("Phiên bản Identical")
 footerCenter.TextColor3 = Colors.TextDark
 footerCenter.TextSize = 10
 footerCenter.Font = Enum.Font.Gotham
@@ -1140,7 +1140,7 @@ footerRight.Name = RandName()
 footerRight.Size = UDim2.new(0, 160, 1, 0)
 footerRight.Position = UDim2.new(1, -174, 0, 0)
 footerRight.BackgroundTransparency = 1
-footerRight.Text = S("LEFTCONTROL TO HIDE")
+footerRight.Text = S("LEFTCONTROL ĐỂ ẨN")
 footerRight.TextColor3 = Colors.TextDark
 footerRight.TextSize = 10
 footerRight.Font = Enum.Font.GothamBold
@@ -1842,10 +1842,10 @@ local ToggleUiVisibility
 local UnloadScript
 local SyncUIWithConfig
 local homePage = tabs["Home"]
-createCategoryHeader(homePage, "HUD OVERLAYS")
+createCategoryHeader(homePage, "HIỂN THỊ THÔNG SỐ")
 ctrls.BallStatsHUD = createToggleRow(
     homePage,
-    "Ball Stats HUD",
+    "Thông số bóng",
     "Live floating card showing Current & Peak ball velocity.",
     Config.BallStatsHUD,
     function(state)
@@ -1857,7 +1857,7 @@ ctrls.BallStatsHUD = createToggleRow(
 )
 ctrls.ClientStatsHUD = createToggleRow(
     homePage,
-    "Client Stats HUD",
+    "Thông số máy khách",
     "Live floating card showing FPS, Ping, and CPU load.",
     Config.ClientStatsHUD,
     function(state)
@@ -1873,7 +1873,7 @@ createInfoRow(homePage, "Game", "Blade Ball", false)
 local serverJobId = game.JobId ~= "" and (game.JobId:sub(1, 28) .. "...") or "028ff5c8-7bd5-46f3-9551-74..."
 createInfoRow(homePage, "Server", serverJobId, true)
 createInfoRow(homePage, "Script version", Config.ScriptVersion, false)
-local runStatusRow = createInfoRow(homePage, "Run status", "Identical engine ready", false)
+local runStatusRow = createInfoRow(homePage, "Run status", "Hệ thống đã sẵn sàng", false)
 latestDeathReasonRow = createInfoRow(homePage, "Latest Miss / Death", "None recorded", true)
 local miscPage = tabs["Misc"]
 createCategoryHeader(miscPage, "CONFIGS")
@@ -1887,7 +1887,7 @@ createButtonRow(miscPage, "Save config", "SAVE NOW", "", false, function()
         SendNotification("Identical Config", "Default config saved.", 2)
     end)
 end)
-createButtonRow(miscPage, "Load config", "LOAD NOW", "", false, function()
+createButtonRow(miscPage, "Load config", "TẢI HỆ THỐNG NOW", "", false, function()
     local ok = LoadSavedConfig()
     if ok then
         if SyncUIWithConfig then SyncUIWithConfig() end
@@ -1928,22 +1928,22 @@ ctrls.KeepCrestMinimised = createToggleRow(
 createButtonRow(miscPage, "Hide interface", "HIDE NOW", "", false, function()
     if ToggleUiVisibility then ToggleUiVisibility() end
 end)
-createButtonRow(miscPage, "Unload Identical", "UNLOAD", "✕", true, function()
+createButtonRow(miscPage, "Tắt Identical", "TẮT", "✕", true, function()
     if UnloadScript then UnloadScript() end
 end)
 local autoparryPage = tabs["Autoparry"]
-createCategoryHeader(autoparryPage, "AUTO PARRY CORE")
+createCategoryHeader(autoparryPage, "CHỨC NĂNG TỰ ĐỘNG ĐỠ")
 ctrls.AutoParry = createToggleRow(
     autoparryPage,
-    "Auto Parry",
+    "Tự động đỡ",
     "Toggles auto parry.",
     Config.AutoParry,
     function(state)
         autoParryEnabled = state
         Config.AutoParry = state
-        footerLeft.Text = S(state and "Auto Parry: ACTIVE" or "Identical engine ready")
-        runStatusRow.SetValue(state and "Auto Parry: ACTIVE" or "Identical engine ready")
-        SendNotification("Auto Parry", "Auto Parry is now " .. (state and "ENABLED" or "DISABLED"), 2)
+        footerLeft.Text = S(state and "Tự động đỡ: ĐANG BẬT" or "Hệ thống đã sẵn sàng")
+        runStatusRow.SetValue(state and "Tự động đỡ: ĐANG BẬT" or "Hệ thống đã sẵn sàng")
+        SendNotification("Tự động đỡ", "Tự động đỡ is now " .. (state and "ĐÃ BẬT" or "ĐÃ TẮT"), 2)
         AutoSaveConfig()
     end,
     false
@@ -1983,7 +1983,7 @@ ctrls.RandomizeAccuracy = createToggleRow(
 )
 ctrls.AutoAbilities = createToggleRow(
     autoparryPage,
-    "Auto Abilities",
+    "Tự động dùng kỹ năng",
     "Uses ability (Q) on high velocity.",
     Config.AutoAbilities,
     function(state)
@@ -1994,7 +1994,7 @@ ctrls.AutoAbilities = createToggleRow(
 )
 ctrls.InstantTriggerbot = createToggleRow(
     autoparryPage,
-    "Instant Triggerbot",
+    "Kích hoạt tức thì",
     "Ping-compensated instant deflection.",
     Config.InstantTriggerbot,
     function(state)
@@ -2005,7 +2005,7 @@ ctrls.InstantTriggerbot = createToggleRow(
 )
 ctrls.VisualParryRing = createToggleRow(
     autoparryPage,
-    "Visual Parry Ring",
+    "Vòng đỡ trực quan",
     "Renders parry range ring around your character.",
     Config.VisualParryRing,
     function(state)
@@ -2030,7 +2030,7 @@ local spamPage = tabs["Spam Core"]
 createCategoryHeader(spamPage, "AUTO SPAM")
 ctrls.AutoSpam = createToggleRow(
     spamPage,
-    "Auto Spam",
+    "Tự động spam",
     "Paced automated rapid parry execution.",
     Config.AutoSpam,
     function(state)
@@ -2041,7 +2041,7 @@ ctrls.AutoSpam = createToggleRow(
 )
 ctrls.SpamActionsPerSecond = createSliderRow(
     spamPage,
-    "Spam Actions Per Second",
+    "Số lần spam mỗi giây",
     "Number of parry actions sent per second.",
     10, 100, Config.SpamActionsPerSecond, false, "",
     function(val)
@@ -2051,7 +2051,7 @@ ctrls.SpamActionsPerSecond = createSliderRow(
 )
 ctrls.AutoSpamDistance = createSliderRow(
     spamPage,
-    "Auto Spam Distance",
+    "Khoảng cách tự động spam",
     "Maximum distance to activate auto spam.",
     5, 60, Config.AutoSpamDistance, false, " studs",
     function(val)
@@ -2064,7 +2064,7 @@ ctrls.AutoSpamDistance = createSliderRow(
 )
 ctrls.SpamBatchMode = createDropdownRow(
     spamPage,
-    "Spam Batch Mode",
+    "Chế độ spam",
     "Input batching rate mode.",
     { "Extremely Fast", "Fast", "Normal", "Safe" },
     Config.SpamBatchMode,
@@ -2077,7 +2077,7 @@ ctrls.SpamBatchMode = createDropdownRow(
 createCategoryHeader(spamPage, "MANUAL SPAM")
 ctrls.ManualSpam = createToggleRow(
     spamPage,
-    "Manual Spam",
+    "Spam thủ công",
     "Hold parry keybind or mouse to continuously spam parries.",
     Config.ManualSpam,
     function(state)
@@ -2093,7 +2093,7 @@ ctrls.PhantomDetection = createToggleRow(detectPage, "Phantom", "Tracks Phantom 
         Config.PhantomDetection = state
         AutoSaveConfig()
     end, false)
-ctrls.TimeHoleDetection = createToggleRow(detectPage, "Time Hole Auto Parry", "Deflects on Time Hole release.",
+ctrls.TimeHoleDetection = createToggleRow(detectPage, "Time Hole Tự động đỡ", "Deflects on Time Hole release.",
     Config.TimeHoleDetection, function(state)
         Config.TimeHoleDetection = state
         AutoSaveConfig()
@@ -2149,7 +2149,7 @@ ctrls.JumpPower = createSliderRow(playerPage, "JumpPower", "Player jump power.",
 createCategoryHeader(playerPage, "IMMORTALITY DESYNC")
 ctrls.ImmortalityDesync = createToggleRow(
     playerPage,
-    "Immortality Desync",
+    "Desync bất tử",
     "3D orbital network velocity desynchronization.",
     Config.ImmortalityDesync,
     function(state)
@@ -2167,7 +2167,7 @@ local function SetPhysicsSendRate(enabled)
 end
 ctrls.SpeedBypass = createToggleRow(
     playerPage,
-    "Speed Bypass",
+    "Vượt giới hạn tốc độ",
     "Change the physics sender rate while enabled.",
     Config.SpeedBypass,
     function(state)
@@ -2249,8 +2249,8 @@ SyncUIWithConfig = function()
         footerRight.Text = S(Config.UIKeybind.Name:upper() .. " TO HIDE")
     end
     autoParryEnabled = Config.AutoParry
-    footerLeft.Text = S(autoParryEnabled and "Auto Parry: ACTIVE" or "Identical engine ready")
-    runStatusRow.SetValue(autoParryEnabled and "Auto Parry: ACTIVE" or "Identical engine ready")
+    footerLeft.Text = S(autoParryEnabled and "Tự động đỡ: ĐANG BẬT" or "Hệ thống đã sẵn sàng")
+    runStatusRow.SetValue(autoParryEnabled and "Tự động đỡ: ĐANG BẬT" or "Hệ thống đã sẵn sàng")
     UpdateVisualRings()
     UpdatePlayerESP()
 end
@@ -2884,9 +2884,9 @@ table.insert(activeConnections, UserInputService.InputBegan:Connect(function(inp
         autoParryEnabled = not autoParryEnabled
         Config.AutoParry = autoParryEnabled
         if ctrls.AutoParry then ctrls.AutoParry.SetState(autoParryEnabled) end
-        footerLeft.Text = S(autoParryEnabled and "Auto Parry: ACTIVE" or "Identical engine ready")
-        runStatusRow.SetValue(autoParryEnabled and "Auto Parry: ACTIVE" or "Identical engine ready")
-        SendNotification("Auto Parry", "Auto Parry is now " .. (autoParryEnabled and "ENABLED" or "DISABLED"), 2)
+        footerLeft.Text = S(autoParryEnabled and "Tự động đỡ: ĐANG BẬT" or "Hệ thống đã sẵn sàng")
+        runStatusRow.SetValue(autoParryEnabled and "Tự động đỡ: ĐANG BẬT" or "Hệ thống đã sẵn sàng")
+        SendNotification("Tự động đỡ", "Tự động đỡ is now " .. (autoParryEnabled and "ĐÃ BẬT" or "ĐÃ TẮT"), 2)
         AutoSaveConfig()
     end
 end))
